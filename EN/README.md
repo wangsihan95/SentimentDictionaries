@@ -50,8 +50,8 @@ The format as follows:
 - Marking method
 - URL
 - Citation
-<br>
-<br>
+
+
 
 ### ANEW
 1999<br>
