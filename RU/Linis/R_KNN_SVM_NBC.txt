@@ -1,0 +1,110 @@
+# 1. Naive Bayes classificator
+# 2. SVM
+# 3. KNN
+
+# ѕакет caret €вл€етс€ своего рода мета-пакетом, который предоставл€ет универсальный способ 
+# работы со множеством пакетов машинного обучени€.
+# install.packages("caret")
+
+
+library(caret)
+setwd("C:/Alexeeva/sent/RGNG_koltcov_coments_data/")
+set.seed(23)  # установили сид, чтобы можно было воспроизвести результаты
+
+
+### data processing
+data <- read.delim2("comments_sentiment_data_mtx.csv", 
+                    encoding="UTF-8", header=T, stringsAsFactors=FALSE)
+
+# View(subset(data, Meta2 == "#ДЕЛ/0!"))  # 8 broken rows
+# as.numeric(rownames((subset(data, Meta2 %in% c("#ДЕЛ/0!","")))))  # their ids: 1352,2045,3839,3974,4271,4593,5206,7184
+
+data2 <- data[-c(1352,2045,3839,3974,4271,4593,5206,7184),c(2:4247)]
+data2$myclass <- as.numeric(data$Meta2[-c(1352,2045,3839,3974,4271,4593,5206,7184)])
+
+data2[,1] <- as.numeric(data2[,1])
+data2[,2] <- as.numeric(data2[,2])
+data2[,3] <- as.numeric(data2[,3])
+
+saveRDS(data2, "comments-processed.RDS")
+rm(data, data2)
+
+### load processed data
+data <- readRDS("comments-processed.RDS")
+
+data$myclass <- factor( round(data$myclass))
+levels(data$myclass)
+
+inTrain <- createDataPartition(y = data$myclass, p = .75, list = FALSE)  # делим датасет на тренировочный (75%) и тестируемый
+
+training <- data[ inTrain,-4246]  # -4246 exclude column with txt ids
+testing  <- data[-inTrain,-4246]
+
+
+saveRDS(training, "./data-round/training.RDS")
+saveRDS(testing, "./data-round/testing.RDS")
+
+ctrl <- trainControl(method = "cv", number=10, sampling="up")  # настраиваем параметры валидации модели: 10-fold сross validation
+
+# Naive Bayes
+start.time <- Sys.time()
+nb_fit <- train(myclass ~ .,
+                data = training, 
+                method = "nb",
+                trControl = ctrl)
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+saveRDS(nb_fit, "./models-round/naive-bayes.RDS")
+
+# тестируем модель на тестовом датасете
+nb_classes <- predict(nb_fit, newdata = testing)
+# оцениваем модель. Presision здесть обозначаетс€ как Pos Pred Value, а recall как Sensitivity
+sink("NB.txt")  # сохран€ем матрицу в txt-файл
+time.taken
+confusionMatrix(data = nb_classes, testing$myclass)
+sink()
+
+# SVM
+start.time <- Sys.time()
+svm_fit <- train(myclass ~ .,
+                data = training, 
+                method = "svmRadial",
+                trControl = ctrl)
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+saveRDS(svm_fit, "./models-round/svm.RDS")
+svm_classes <- predict(svm_fit, newdata = testing)
+sink("svm.txt")
+time.taken
+confusionMatrix(data = svm_classes, testing$myclass)
+sink()
+
+
+# KNN
+start.time <- Sys.time()
+knn_fit <- train(myclass ~ .,
+                 data = training, 
+                 method = "kknn",
+                 trControl = ctrl)
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+saveRDS(knn_fit, "./models-round/knn.RDS")
+knn_classes <- predict(knn_fit, newdata = testing)
+sink("knn.txt")
+time.taken
+confusionMatrix(data = knn_classes, testing$myclass)
+sink()
+
+# Loglit
+#5 * ((ncol(testset) -1) + 1) + 5 + 1
+
+
+
+start.time <- Sys.time()
+logit_fit <- train(myclass ~ .,
+                 data = training, 
+                 method="multinom", MaxNWts = 21236, trControl=ctrl)
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+saveRDS(logit_fit, "./models-round/logit.RDS")
+

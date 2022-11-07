@@ -1,0 +1,9 @@
+Thank you for using SenticNet!
+
+Please acknowledge the authors by citing the following publications
+in any research work or presentation containing results obtained
+in whole or in part through the use of SenticNet:
+
+E Cambria, Q Liu, S Decherchi, F Xing, K Kwok. SenticNet 7: A commonsense-based neurosymbolic AI framework for explainable sentiment analysis. In: LREC, 3829–3839 (2022)
+
+Y Susanto, A Livingstone, BC Ng, E Cambria. The Hourglass Model Revisited. IEEE Intelligent Systems 35(5), 96-102 (2020)
