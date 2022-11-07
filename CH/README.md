@@ -5,7 +5,7 @@ Here are some emotion dictionaries in Chinese.
 - The first part is the table. The second part is a detailed description of the dictionaries; 
 - 8 dictionaries currently available
 
-<br><br>
+
 
 ## Table of Chinese dictionaries
 ---
@@ -22,8 +22,7 @@ Here are some emotion dictionaries in Chinese.
 | 否定词典Negative Dictionary<br>(Словарь отрицательных слов)  | /    | 58     | Ручной | Только нег.                                                  |      |
 | 褒贬词及其近义词PNS <br>(Positive and negative words and their close synonyms)) | /    | 1664   | Ручной | Бинарная шкала {1,2,3}                                       |      |
 
-<br>
-<br>
+
 
 ## Introduction
 ---
@@ -37,7 +36,7 @@ The format as follows:
 - Marking method
 - URL
 - Citation
----
+<br>
 
 ### 知网词典 HowNet
 2003 (обновляется)
