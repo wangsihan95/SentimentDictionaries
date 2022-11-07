@@ -5,7 +5,7 @@ Here are some emotion dictionaries in English.
 - The first part is the table. The second part is a detailed description of the dictionaries; 
 - 20 dictionaries currently available
 
-<br><br>
+<br>
 
 ## Table of English dictionaries
 ---
@@ -36,10 +36,6 @@ Here are some emotion dictionaries in English.
 
 
 <br>
-<br>
-
-
-
 
 
 ## Introduction
@@ -60,11 +56,11 @@ The format as follows:
 ---
 
 ### ANEW
-1999
-ANEW (Affective Norms for English Words) создан в 1999 г. и содержит разметку по категориям тональности (affective valence), активности и контроля (dominance). Слова размечены вручную студентами-психологами.
-765
-Ручной
-Непрерывная шкала \[1; 9]: \[1, 4] – нег., \[6, 9] – поз.
+1999<br>
+ANEW (Affective Norms for English Words) создан в 1999 г. и содержит разметку по категориям тональности (affective valence), активности и контроля (dominance). Слова размечены вручную студентами-психологами.<br>
+765<br>
+Ручной<br>
+Непрерывная шкала \[1; 9]: \[1, 4] – нег., \[6, 9] – поз.<br>
 [https://github.com/dwzhou/SentimentAnalysis](https://github.com/dwzhou/SentimentAnalysis)
 >Bradley M.M., Lang P.J. Affective Norms for English Words (ANEW): Stimuli, instruction man- ual, and affective ratings (Tech. Report C-1). – Gainesville: University of Florida, Center for Re- search in Psychophysiology, 1999.
 
