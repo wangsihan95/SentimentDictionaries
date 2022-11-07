@@ -5,8 +5,6 @@ Here are some emotion dictionaries in English.
 - The first part is the table. The second part is a detailed description of the dictionaries; 
 - 20 dictionaries currently available
 
-<br>
-
 ## Table of English dictionaries
 ---
 
@@ -35,7 +33,6 @@ Here are some emotion dictionaries in English.
 | **SlangSD**              | 2016 | 96462  | Автом.  | Дискретная шкала \[–2, 2]: <br>\[–2, –1] – нег., \[1, 2] – поз.                |     |
 
 
-<br>
 
 
 ## Introduction
@@ -65,18 +62,16 @@ ANEW (Affective Norms for English Words) создан в 1999 г. и содер�
 >Bradley M.M., Lang P.J. Affective Norms for English Words (ANEW): Stimuli, instruction man- ual, and affective ratings (Tech. Report C-1). – Gainesville: University of Florida, Center for Re- search in Psychophysiology, 1999.
 
 
-<br>
-
 ### Словарь Бинга Лью
-2004
-Словарь Бинга Лью (Bing Liu's Opinion Lexicon или Hu&Liu’s Lexicon) – результат многолетней работы, начавшейся еще в 2004 г.. Его исходная версия была создана на основе расширения начального списка из 30 прилагательных синонимами и антонимами из тезауруса WordNet. В дальнейшем словарь расширялся, в том числе за счет анализа текстов социальных медиа, поэтому присутствуют слова с ошибками.
-6776
-Автом.
-Бинарная шкала {–1, +1}
-[https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
+2004<br>
+Словарь Бинга Лью (Bing Liu's Opinion Lexicon или Hu&Liu’s Lexicon) – результат многолетней работы, начавшейся еще в 2004 г.. Его исходная версия была создана на основе расширения начального списка из 30 прилагательных синонимами и антонимами из тезауруса WordNet. В дальнейшем словарь расширялся, в том числе за счет анализа текстов социальных медиа, поэтому присутствуют слова с ошибками.<br>
+6776<br>
+Автом.<br>
+Бинарная шкала {–1, +1}<br>
+[https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)<br>
 >Hu M., Liu B. Mining and Summarizing Cus- tomer Reviews // Proceedings of the ACM SIGKDD International Conference on Knowledge, Discovery and Data Mining – KDD-2004 (Aug 22-25, 2004, Seattle, Washington, USA). – New York: Associa- tion for Computing Machinery, 2004. – P. 168–177.
 
-<br>
+
 
 ### MPQA
 2005
